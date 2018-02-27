@@ -1,3 +1,14 @@
+# what is node.js?
+
+Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
+
+# eventloop
+
+gmail getting new emails
+
+exrx: while-timeout
+notice: there is no sleep in JavaScript. And don't trust timeouts
+
 # why javascript?
 
 # types
