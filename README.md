@@ -9,6 +9,8 @@ gmail getting new emails
 exrx: while-timeout
 notice: there is no sleep in JavaScript. And don't trust timeouts
 
+# non blocking i/o
+
 # why javascript?
 
 # types
