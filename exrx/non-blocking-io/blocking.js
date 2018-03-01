@@ -7,8 +7,12 @@ console.log(urls)
 
 let download = async () => {
   for(const url of urls) {
-    const res = await request.get(`https://www.a${url}.com`)
-    fs.writeFileSync(`${url}.html`, res.text)
+    try {
+      const res = await request.get(`https://www.a${url}.com`)
+      fs.writeFileSync(`/tmp/${url}.html`, res.text)
+    } catch (e) {
+      console.log(e)
+    }
   }
 }
 
