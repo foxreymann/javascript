@@ -2,6 +2,8 @@
 
 Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 
+# semicolons
+
 # eventloop
 
 gmail getting new emails
@@ -10,6 +12,10 @@ exrx: while-timeout
 notice: there is no sleep in JavaScript. And don't trust timeouts
 
 # non blocking i/o
+
+exrx: non-blocking-io
+
+download files
 
 # why javascript?
 

@@ -1,11 +1,15 @@
 const request = require('superagent')
+const fs = require('fs')
 
-let url
+let urls = [...Array(100).keys()]
 
-(async () => {
-  for (i=1; i<=100; i++) {
-    url = 'a' + i + '.com'
-    const res = await request.get(url)
-console.log(res)
+console.log(urls)
+
+let download = async () => {
+  for(const url of urls) {
+    const res = await request.get(`https://www.a${url}.com`)
+    fs.writeFileSync(`${url}.html`, res.text)
   }
-})()
+}
+
+download()
