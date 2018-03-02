@@ -15,7 +15,7 @@ notice: there is no sleep in JavaScript. And don't trust timeouts
 
 exrx: non-blocking-io
 
-download files
+download files from an array of url's to a directory. do it one by one, measure time
 
 # why javascript?
 
@@ -55,11 +55,11 @@ intuition for WAT is happening.
 
 exrx: Array.isArray([])
 
+## be careful
+
 exrx: 0.1 + 0.2
 
 exrc: Math.PI
-
-## be careful
 
 exrx: [] + [] = ''
 [] + {} = '[object Object]'
