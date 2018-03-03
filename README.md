@@ -2,6 +2,20 @@
 
 Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 
+# how to install
+
+# npm
+
+"An old programming adage says that while functionality is an asset, code is a liability."
+
+# How Node.js Applications Work
+
+Node.js couples JavaScript with an event loop for quickly dispatching operations when events occur.Node.js’s philosophy is to give you low-level access to the event loop and to system resources. Or, in the words of core committer Felix Geisendörfer, in Node.js “everything runs in parallel except your code.”[ 13] If this seems a little backward to you, don’t worry. The following figure shows how the event loop works.
+
+![eventloop](./img/event-loop.png)
+
+As long as there’s something left to do, Node.js’s event loop will keep spinning. Whenever an event occurs, Node.js invokes any callbacks (event handlers) that are listening for that event. As a Node.js developer, your job is to create the callback functions that get executed in response to events. Any number of callbacks can respond to any event, but only one callback function will ever be executing at any time. Everything else your program might do— like waiting for data from a file or an incoming HTTP request— is handled by Node.js, in parallel, behind the scenes. Your application code will never be executed at the same time as anything else. It will always have the full attention of Node.js’s JavaScript engine while it’s running.
+
 # semicolons
 
 # eventloop
@@ -15,9 +29,20 @@ notice: there is no sleep in JavaScript. And don't trust timeouts
 
 exrx: non-blocking-io
 
-download files from an array of url's to a directory. do it one by one, measure time
+download files from an array of url's to a directory. do it one by one, measure time. next do it async, so all at once
 
 # why javascript?
+
+runs in every webbrowser in the world
+
+runs server side
+Many middleware tasks are I/ O-bound, just like client-side scripting and databases. These server-side programs often have to wait for things like a database result, feedback from a third-party web service, or incoming connection requests. Node.js is designed for exactly these kinds of applications.
+
+On the left, back-end databases are investing heavily in JavaScript. Document-oriented databases like MongoDB and CouchDB use JavaScript extensively— from modifying records to ad-hoc queries and mapreduce jobs. Other NoSQL datastores, like Elasticsearch and Neo4j, present data in JavaScript Object Notation (JSON). These days, you can even write SQL functions for Postgres in JavaScript with the right plugin.
+
+Node.js has also made inroads into the field of autonomous systems. Platforms for protyping the Internet of Things, such as the Raspberry Pi OS Raspbian, come with Node.js, and Tessel is built on Node.js from the ground up.
+
+Johnny-Five and CylonJS are two robotics-development platforms that help you develop Node.js applications for a variety of hardware components.
 
 # types
 
@@ -53,7 +78,7 @@ an ordered list of values with integer keys.
 Keep that idea in mind, knowing that an array is really an object helps you gain
 intuition for WAT is happening.
 
-exrx: Array.isArray([])
+exrx: Array.isArray()
 
 ## be careful
 
@@ -61,10 +86,11 @@ exrx: 0.1 + 0.2
 
 exrc: Math.PI
 
-exrx: [] + [] = ''
-[] + {} = '[object Object]'
-{} + [] = 0
+exrx:  +  = ''
+ + {} = '[object Object]'
+{} +  = 0
 {} + {} = NaN
+('wat' + 1)
 ('wat' - 1)
 
 exrx: parseInt('09')
