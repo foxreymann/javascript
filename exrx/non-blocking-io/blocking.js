@@ -1,11 +1,11 @@
 const request = require('superagent')
 const fs = require('fs')
 
-let urls = [...Array(100).keys()]
-
-console.log(urls)
+const numberOfDownloads = 20
+const urls = [...Array(numberOfDownloads).keys()]
 
 let download = async () => {
+  console.time('download')
   for(const url of urls) {
     try {
       const res = await request.get(`https://www.a${url}.com`)
@@ -14,6 +14,7 @@ let download = async () => {
       console.log(e)
     }
   }
+  console.timeEnd('download')
 }
 
 download()
