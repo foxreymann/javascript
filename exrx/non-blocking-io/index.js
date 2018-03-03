@@ -4,7 +4,7 @@ const fs = require('fs')
 const numberOfDownloads = 20
 const urls = [...Array(numberOfDownloads).keys()]
 
-let download = async () => {
+let downloadBlocking = async () => {
   console.time('download')
   for(const url of urls) {
     try {
@@ -17,4 +17,5 @@ let download = async () => {
   console.timeEnd('download')
 }
 
-download()
+
+downloadBlocking()
