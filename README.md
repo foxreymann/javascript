@@ -28,8 +28,6 @@ notice: there is no sleep in JavaScript. And don't trust timeouts
 callback
 exrx: read-file.js
 
-callback hell:
-read file 1, read file 2, read file 3, read file 4
 
 # non blocking i/o
 
