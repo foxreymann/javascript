@@ -25,10 +25,22 @@ notice: there is no sleep in JavaScript. And don't trust timeouts
 
 # callback vs promises / async await
 
-callback
 exrx: read-file.js
+callback
 
-exex: callback-hell.js
+exrx: add-files.js
+callback hell
+save in a file - add 2 numbers and substract third one - add values, store output in file 3
+cons: globals and multiple requests
+cons: promise.all
+
+exrx: read-file-promise.js
+
+exrx: add-files-promise.js
+
+exrx: read-file-async.js
+
+exrx: add-files-async.js
 
 # non blocking i/o
 

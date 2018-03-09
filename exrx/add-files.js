@@ -26,7 +26,7 @@ const processOperandThree = (err, text) => {
   }
 
   total -= +text
-  fs.writeFile('/root/total', total, done)
+  fs.writeFile('./.total', total, done)
 }
 
 const done = err => {
