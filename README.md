@@ -124,7 +124,14 @@ So let’s begin at the basics. There are 5 different literal (things you can de
 
 ### Numbers
 
-(e.g. `1`, `2` , `1.28` , `NaN` , `Infinity`, etc.)…note that NaN
+```javascript
+1
+2
+1.28
+NaN
+Infinity
+-Infinity
+```
 (not a number) is a number. From the ECMA spec:
 
 > 4.3.20 Number type: set of all possible Number values including the special
@@ -133,15 +140,42 @@ So let’s begin at the basics. There are 5 different literal (things you can de
 ```javascript
 typeof 2
 typeof Infinity
+typeof NaN
 ```
 
-**Strings **(e.g. `'xyz'` , `"abc"`) Pretty straightforward
+### Strings **(e.g. `'xyz'` , `"abc"`) Pretty straightforward
 
-**Boolean** (just `true` and `false`)…there’s a whole article that can be
+primitive
+
+```javascript
+'abc'
+"abc"
+'abc' + "abc"
+```
+
+### Template literals
+
+string with backticks
+
+```javascript
+`abc`
+
+`abs
+ ced`
+
+let name = 'Fox'
+`my name is ${name}.`
+```
+
+
+### Boolean** (just `true` and `false`)…there’s a whole article that can be
 written about truthy vs falsy values. But for the moment, we’re going to skip
 that.
 
 **Objects** (e.g. `{name:'abhi', dob: '1997'}`)
+
+While objects are just an unordered map from string keys to values, arrays are an ordered list of values with integer keys.
+
 
 **Array **(e.g. `[1,2,'hi']`)
 let arr = [1,2,3]
@@ -180,12 +214,13 @@ Math.PI
 [] + {} = '[object Object]'
 {} + [] = 0
 {} + {} = NaN
-('wat' + 1)
-('wat' - 1)
+'fox' + 1 / fox1
+'fox' - 1 / NaN
 Array(16).join('_' - 1) + ' Fox' = 'NaNNaNNaN Fox'
 
-parseInt('09')
+parseInt('09') // don't use
 +'09'
+parseInt('12a34') // don't use
 +'12a34'
 
 # == vs ===
