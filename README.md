@@ -18,10 +18,67 @@ As long as there’s something left to do, Node.js’s event loop will keep spin
 
 exaplain: gmail, getting new emails vs typing email
 
-exrx: while-timeout
+`exrx: while-timeout`
+
 notice: there is no sleep in JavaScript. And don't trust timeouts
 
 # semicolons
+
+# arrow functions
+
+- more concise
+- allow implicit returns
+- get 'this' from parent function
+
+```javascript
+function powerTwo(a) {
+  return a * a
+}
+
+let powerTwo = a => a * a
+```
+
+# spread operator
+
+```javascript
+const languages = ['javascript', 'python', 'php']
+const dsl = ['SQL', 'CSS', 'HTML']
+const allLanguages = [...languages, ...dsl]
+
+Math.max(...[-1, 100, 9001, -32]) // 9001
+```
+
+### spread with strings
+
+```javascript
+function wrapInAsterisks(word) {
+  return [...word].map(letter => `*${letters}*`).join('')
+}
+
+console.log(wrapInAsterisks('THURA'))
+```
+
+### mutate object with spread
+
+```javascript
+const initState = {
+  name: 'Fox Reymann',
+  nationality: 'Polish'
+}
+
+// correct
+const state = {...initialState, height: 184}
+
+// wrong
+const state = initialState // this will create new variable referring to the same object
+state.height = 184 // mutation
+```
+
+# rest operator
+
+# TDD
+
+https://github.com/foxreymann/es6-exercise
 
 # callback vs promises / async await
 
@@ -65,11 +122,18 @@ Johnny-Five and CylonJS are two robotics-development platforms that help you dev
 
 So let’s begin at the basics. There are 5 different literal (things you can declare instantaneously) types that exist in JS:
 
-**Numbers** (e.g. `1`, `2` , `1.28` , `NaN` , `Infinity`, etc.)…note that NaN
+### Numbers
+
+(e.g. `1`, `2` , `1.28` , `NaN` , `Infinity`, etc.)…note that NaN
 (not a number) is a number. From the ECMA spec:
 
 > 4.3.20 Number type: set of all possible Number values including the special
 > “Not-a-Number” (NaN) values, positive infinity, and negative infinity
+
+```javascript
+typeof 2
+typeof Infinity
+```
 
 **Strings **(e.g. `'xyz'` , `"abc"`) Pretty straightforward
 
@@ -80,6 +144,15 @@ that.
 **Objects** (e.g. `{name:'abhi', dob: '1997'}`)
 
 **Array **(e.g. `[1,2,'hi']`)
+let arr = [1,2,3]
+
+arr[0] = 4
+
+console.log(arr)
+
+let last = arr.pop()
+
+console.log(Array.isArray(arr))
 
 Of these literals, only booleans, numbers, and strings are primitives. There are
 also a couple of other primitive values (`undefined` and `null`).
@@ -97,21 +170,26 @@ intuition for WAT is happening.
 
 exrx: Array.isArray()
 
-## be careful
 
-exrx: 0.1 + 0.2
+# be careful
 
-exrc: Math.PI
-
-exrx:  +  = ''
- + {} = '[object Object]'
-{} +  = 0
+```javascript
+0.1 + 0.2
+Math.PI
+[] + [] =''
+[] + {} = '[object Object]'
+{} + [] = 0
 {} + {} = NaN
 ('wat' + 1)
 ('wat' - 1)
+Array(16).join('_' - 1) + ' Fox' = 'NaNNaNNaN Fox'
 
-exrx: parseInt('09')
-exrx: +'09'
-exrx: +'12a34'
+parseInt('09')
++'09'
++'12a34'
 
-## == vs ===
+# == vs ===
+
+# Scoping and hoisting
+
+```exrx/scope-var-global.js```
